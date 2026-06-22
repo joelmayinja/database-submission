@@ -1,4 +1,4 @@
-# Agricultural Services Database (agric_db) ☕🌾
+# Agricultural Services Database (agric_db) 
 
 [![MySQL](https://img.shields.io/badge/MySQL-8.0-blue.svg)](https://www.mysql.com/)
 [![UCU](https://img.shields.io/badge/University-Uganda%20Christian%20University-green.svg)](https://ucu.ac.ug/)
@@ -6,20 +6,20 @@
 
 A robust, normalized relational database system designed for the **Ministry of Agriculture, Animal Industry and Fisheries (MAAIF)** of Uganda. This system digitalizes the coffee value chain by tracking growers, monitoring production seasons, and managing the distribution of agricultural inputs.
 
-## 📋 Project Overview
+##  Project Overview
 Coffee is Uganda’s leading export crop, yet many processes remain manual. **agric_db** bridges this gap by providing a centralized platform for:
 - **Farmer & Farm Management:** Precise tracking using GPS coordinates and registration IDs.
 - **Production Tracking:** Monitoring yields per farm across bi-annual coffee seasons.
 - **Input Distribution:** Managing the delivery of seedlings and agro-chemicals to farmers.
 - **Extension Services:** Logging field visits and advisory reports by extension workers.
 
-## 🛠️ Tech Stack
+##  Tech Stack
 - **Database Engine:** MySQL 8.0
 - **Development Environment:** Visual Studio Code
 - **Local Server:** XAMPP (Apache + MySQL)
 - **Modeling:** Enhanced Entity-Relationship (EER) Modeling
 
-## 📐 Database Architecture
+##  Database Architecture
 The system utilizes advanced EER features to ensure data integrity and reduce redundancy:
 - **Supertype/Subtype Pattern:** Used for `Person` (Farmer, Extension Worker, Official) and `Input` (Seedling, AgroChemical) entities.
 - **Disjoint Constraints:** Ensures a user cannot hold conflicting roles (e.g., a person cannot be both a Farmer and a Ministry Official).
@@ -30,9 +30,9 @@ The system utilizes advanced EER features to ensure data integrity and reduce re
 > Upload your EERD image to your repository and link it here!
 > `![EERD Diagram](./path_to_your_image.jpeg)`
 
-## 🚀 Key Features & Automation
+##  Key Features & Automation
 
-### 🛡️ Security & RBAC
+###  Security & RBAC
 The system implements **Role-Based Access Control (RBAC)** to protect sensitive data:
 | Role | Access Level |
 | :--- | :--- |
@@ -41,30 +41,30 @@ The system implements **Role-Based Access Control (RBAC)** to protect sensitive 
 | **Extension Worker** | Operational access to field logs and input distribution. |
 | **Farmer App** | Restricted to procedure execution (Atomic Registration). |
 
-### 🤖 Automation (Triggers & Procedures)
+###  Automation (Triggers & Procedures)
 - **Data Validation:** Triggers prevent negative production yields and automatically set record dates.
 - **Atomic Transactions:** Stored procedures ensure that multi-table inserts (like registering a new Person and Farmer) succeed or fail together, preventing "orphan" records.
 - **Activity Tracking:** Automatically updates a farmer's `last_activity` date whenever a new harvest is recorded.
 
-### 📊 Analytical Views
+###  Analytical Views
 - `vw_ActiveFarmers`: Filters for farmers active within the last 12 months.
 - `vw_LowProductionFarmers`: Identifies farms producing below a 500kg threshold for targeted support.
 - `vw_InputDistributionPerVillage`: Summarizes resource allocation by sub-county.
 
-## 🧪 Testing & Validation
+##  Testing & Validation
 The system successfully passed 8 comprehensive test cases, verifying:
 - [x] Primary and Foreign Key constraints.
 - [x] Transactional integrity for complex procedures.
 - [x] Automated field updates via triggers.
 - [x] Security restrictions for different user roles.
 
-## 💾 Backup & Recovery
+##  Backup & Recovery
 To ensure data resilience, a strategy is in place featuring:
 - **Daily Backups:** Using `mysqldump` for full schema and data exports.
 - **Point-in-Time Recovery:** Enabled through MySQL Binary Logs.
 - **Recovery Drill:** Monthly restoration tests to verify backup integrity.
 
-## 👥 Contributors
+##  Contributors
 - **Mayinja Joel** (S24B23/047)
 - **Mugoya Andrew** (M24B23/013)
 - **Rockdit Minyiel Ayuak** (M24B23/040)
