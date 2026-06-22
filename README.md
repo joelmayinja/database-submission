@@ -26,9 +26,8 @@ The system utilizes advanced EER features to ensure data integrity and reduce re
 - **Referential Integrity:** Strict enforcement using `ON DELETE CASCADE` and `ON DELETE RESTRICT`.
 
 ### EERD Snapshot
-> [!TIP]
-> Upload your EERD image to your repository and link it here!
-> `![EERD Diagram](./path_to_your_image.jpeg)`
+> `![EERD Diagram](./<img width="2000" height="2828" alt="image" src="https://github.com/user-attachments/assets/64f5bfab-22fe-49ff-acd9-69c0f5c8b62b" />
+)`
 
 ##  Key Features & Automation
 
